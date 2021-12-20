@@ -84,56 +84,56 @@ function rotateArray(array, offset) {
 }
 
 function identifyRow(sqIndex, posInsSq) {
-  if ((sqIndex === 1 || sqIndex === 4 || sqIndex === 7)) {
-    if (posInsSq === 1 || posInsSq === 2 || posInsSq === 3) {
+  if (sqIndex % 3 === 1) {
+    if (posInsSq < 4) {
       return 1;
     }
-    if (posInsSq === 4 || posInsSq === 5 || posInsSq === 6) {
+    if (posInsSq < 7) {
       return 2;
     }
     return 3;
   }
-  if ((sqIndex === 2 || sqIndex === 5 || sqIndex === 8)) {
-    if (posInsSq === 1 || posInsSq === 2 || posInsSq === 3) {
+  if (sqIndex % 3 === 2) {
+    if (posInsSq < 4) {
       return 4;
     }
-    if (posInsSq === 4 || posInsSq === 5 || posInsSq === 6) {
+    if (posInsSq < 7) {
       return 5;
     }
     return 6;
   }
-  if (posInsSq === 1 || posInsSq === 2 || posInsSq === 3) {
+  if (posInsSq < 4) {
     return 7;
   }
-  if (posInsSq === 4 || posInsSq === 5 || posInsSq === 6) {
+  if (posInsSq < 7) {
     return 8;
   }
   return 9;
 }
 
 function identifyColumn(sqIndex, posInsSq) {
-  if ((sqIndex === 1 || sqIndex === 2 || sqIndex === 3)) {
-    if (posInsSq === 1 || posInsSq === 4 || posInsSq === 7) {
+  if (sqIndex < 4) {
+    if (posInsSq % 3 === 1) {
       return 1;
     }
-    if (posInsSq === 2 || posInsSq === 5 || posInsSq === 8) {
+    if (posInsSq % 3 === 2) {
       return 2;
     }
     return 3;
   }
-  if ((sqIndex === 4 || sqIndex === 5 || sqIndex === 6)) {
-    if (posInsSq === 1 || posInsSq === 4 || posInsSq === 7) {
+  if (sqIndex < 7) {
+    if (posInsSq % 3 === 1) {
       return 4;
     }
-    if (posInsSq === 2 || posInsSq === 5 || posInsSq === 8) {
+    if (posInsSq % 3 === 2) {
       return 5;
     }
     return 6;
   }
-  if (posInsSq === 1 || posInsSq === 4 || posInsSq === 7) {
+  if (posInsSq % 3 === 1) {
     return 7;
   }
-  if (posInsSq === 2 || posInsSq === 5 || posInsSq === 8) {
+  if (posInsSq % 3 === 2) {
     return 8;
   }
   return 9;
