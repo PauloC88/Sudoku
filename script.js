@@ -35,15 +35,14 @@ function createGrid() {
   const offsetArray = [1, 2, 4, 5, 7, 8];
   offsetArray.sort(() => 0.5 - Math.random());
   const offset = offsetArray[3];
-  let firstId = 11; 
   for (let i = 1; i <= gridSize; ++i) {
-    for (let j = firstId; j <= firstId + 8; ++j) {
-      let gridButton = document.getElementById(j);
-      gridButton.innerText = digitsArray[j - firstId];
-      gridButton.setAttribute("data", digitsArray[j - firstId]);
+    for (let j = 1; j <= gridSize; ++j) {
+      let id = i * 10 + j;
+      let gridButton = document.getElementById(id);
+      gridButton.innerText = digitsArray[j - 1];
+      gridButton.setAttribute("data", digitsArray[j - 1]);
     }
     digitsArray = rotateArray(digitsArray, offset);
-    firstId += 10;
   }
   let array = Array.from(Array(gridSize * 11 + 1).keys());
   for (let i = 9; i > 1; --i) {
