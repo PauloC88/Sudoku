@@ -1,0 +1,68 @@
+.card-header {
+	background-color: fuchsia;
+	height: 30px;
+	padding-left: 30px;
+	padding-top: 0px;
+}
+
+.card-body {
+	height: 32px;
+	background-color: lightgrey;
+	display: grid;
+	grid-template-columns: 95px 355px;
+	padding-top: 1px;
+	padding-left: 1px;
+}
+
+#new-game {
+	background-color: deepskyblue;
+}
+
+.grid-container {
+	background-color: lightgrey;
+	display: grid;
+	grid-template-rows: 50px 50px 50px;
+	grid-template-columns: 50px 50px 50px;
+	border: 2px solid blueviolet;
+}
+
+#play-area {
+	width: 462px;
+	height: 462px;
+	grid-auto-flow: column;
+	grid-template-rows: 154px 154px 154px;
+	grid-template-columns: 154px 154px 154px;
+	border: none;
+}
+
+#digits-grid {
+	width: 462px;
+	height: 62px;
+	background-color: fuchsia;
+	display: grid;
+	grid-template-columns: repeat(9, 42px) 80px;
+	border: 2px solid blueviolet;
+	border-top: 20px solid blueviolet;
+}
+
+.grid-button {
+	vertical-align: middle;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	color: black;
+}
+
+.grid-button:focus {
+	border: 3px solid blue;
+}
+
+.digit {
+	color: blue;
+	height: 40px;
+}
+
+.delete-button {
+	color: blue;
+	height: 40px;
+}
