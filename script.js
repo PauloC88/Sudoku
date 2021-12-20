@@ -139,6 +139,8 @@ function identifyColumn(sqIndex, posInsSq) {
   return 9;
 }
 
+let gameWon = false;
+
 function selectNumber(id) {
   let digitsGrid = document.getElementById("digits-grid");
   digitsGrid.textContent = "";
@@ -163,6 +165,9 @@ function selectNumber(id) {
     deleteButton.innerText = "Delete";
     deleteButton.onclick = function() {deleteNumber(id);};
     digitsGrid.appendChild(deleteButton);
+    if (gameWon) {
+      deleteButton.disabled = true;
+    }
   }
 }
 
@@ -237,7 +242,7 @@ function deleteNumber(id) {
 }
 
 function checkGameWon() {
-  let gameWon = true;
+  gameWon = true;
   let gridButtons = document.getElementsByClassName("main-grid");
   for (let gridButton of gridButtons) {
     if (gridButton.innerText == "") {
