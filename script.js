@@ -84,59 +84,14 @@ function rotateArray(array, offset) {
 }
 
 function identifyRow(sqIndex, posInsSq) {
-  if (sqIndex % 3 === 1) {
-    if (posInsSq < 4) {
-      return 1;
-    }
-    if (posInsSq < 7) {
-      return 2;
-    }
-    return 3;
-  }
-  if (sqIndex % 3 === 2) {
-    if (posInsSq < 4) {
-      return 4;
-    }
-    if (posInsSq < 7) {
-      return 5;
-    }
-    return 6;
-  }
-  if (posInsSq < 4) {
-    return 7;
-  }
-  if (posInsSq < 7) {
-    return 8;
-  }
-  return 9;
+  return Math.floor((posInsSq + 2) / 3) + (sqIndex - 1) % 3 * 3;
 }
 
 function identifyColumn(sqIndex, posInsSq) {
-  if (sqIndex < 4) {
-    if (posInsSq % 3 === 1) {
-      return 1;
-    }
-    if (posInsSq % 3 === 2) {
-      return 2;
-    }
-    return 3;
+  if (posInsSq % 3 > 0) {
+    return posInsSq % 3 + Math.floor((sqIndex - 1) / 3) * 3;
   }
-  if (sqIndex < 7) {
-    if (posInsSq % 3 === 1) {
-      return 4;
-    }
-    if (posInsSq % 3 === 2) {
-      return 5;
-    }
-    return 6;
-  }
-  if (posInsSq % 3 === 1) {
-    return 7;
-  }
-  if (posInsSq % 3 === 2) {
-    return 8;
-  }
-  return 9;
+  return 3 + Math.floor((sqIndex - 1) / 3) * 3;
 }
 
 let gameWon = false;
